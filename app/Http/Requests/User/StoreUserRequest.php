@@ -35,9 +35,6 @@ class StoreUserRequest extends FormRequest
                 'min:2',
                 'max:255'
             ],
-            'name.required' => 'Campo obrigatório.',
-            'name.min' => 'Mínimo de 2 caracteres.',
-            'name.max' => 'Máximo de 255 caracteres.',
             'email' => [
                 'required',
                 'string',
