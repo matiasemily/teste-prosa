@@ -7,7 +7,7 @@
 
     {{-- Cabeçalho da Página --}}
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Cliente') }}
         </h2>
     </x-slot>
@@ -15,8 +15,8 @@
     {{-- Cabeçalho e Botão de Criação --}}
     <div class="py-3">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 flex justify-between items-center text-gray-900 dark:text-gray-100">
+            <div class="bg-cyan-10 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 flex justify-between items-center text-gray-900">
                     <span>{{ __("Edição de Clientes") }}</span>
 
                     {{-- Formulário para deletar --}}
@@ -27,10 +27,10 @@
 
                         {{-- Botão Deletar --}}
                         <button type="submit"
-                                class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent
-                                     rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700
-                                      focus:bg-red-700 active:bg-red-900 focus:outline-none focus:ring-2 focus:ring-indigo-500
-                                       focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
+                                class="inline-flex items-center px-4 py-2 bg-pink-600 border border-transparent
+                                     rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-pink-700
+                                      focus:bg-pink-700 active:bg-pink-900 focus:outline-none focus:ring-2 focus:ring-cyan-500
+                                       focus:ring-offset-2 transition ease-in-out duration-150">
                             Deletar Cliente
                         </button>
                     </form>
@@ -41,8 +41,8 @@
 
     <div class="py-3">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+            <div class="bg-cyan-10 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
                     {{-- Formulário de Edição de Cliente --}}
                     <form method="POST" action="{{ route('clientes.update', $cliente->id) }}"
                           onsubmit="return confirm('Tem certeza que deseja atualizar este cliente?');">
@@ -65,9 +65,9 @@
                                                    value="{{ $cliente->name }}"
                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
                                                     placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('name') ? 'ring-red-600 focus:ring-red-600' : 'ring-gray-300 focus:ring-indigo-600' }}">
+                                                     {{ $errors->has('name') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
                                             @error('name')
-                                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                                            <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
@@ -81,9 +81,9 @@
                                                    value="{{ $cliente->email }}"
                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
                                                     placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('email') ? 'ring-red-600 focus:ring-red-600' : 'ring-gray-300 focus:ring-indigo-600' }}">
+                                                     {{ $errors->has('email') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
                                             @error('email')
-                                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                                            <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
@@ -98,9 +98,9 @@
                                                    value="{{ $cliente->telephone }}"
                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
                                                     placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('telephone') ? 'ring-red-600 focus:ring-red-600' : 'ring-gray-300 focus:ring-indigo-600' }}">
+                                                     {{ $errors->has('telephone') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
                                             @error('telephone')
-                                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                                            <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
@@ -114,9 +114,9 @@
                                                    value="{{ $cliente->zip_code }}"
                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
                                                     placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('zip_code') ? 'ring-red-600 focus:ring-red-600' : 'ring-gray-300 focus:ring-indigo-600' }}">
+                                                     {{ $errors->has('zip_code') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
                                             @error('zip_code')
-                                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                                            <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
@@ -130,9 +130,9 @@
                                                    value="{{ $cliente->address }}"
                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
                                                     placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('address') ? 'ring-red-600 focus:ring-red-600' : 'ring-gray-300 focus:ring-indigo-600' }}">
+                                                     {{ $errors->has('address') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
                                             @error('address')
-                                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                                            <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
@@ -148,10 +148,7 @@
                                 </a>
 
                                 <!-- Botão Atualizar -->
-                                <button type="submit"
-                                        class="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white
-                                         shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2
-                                          focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                                <button type="submit" class="inline-flex items-center text-center px-4 py-2 bg-violet-700 hover:bg-violet-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition ease-in-out duration-150">
                                     Atualizar
                                 </button>
                             </div>

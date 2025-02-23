@@ -27,9 +27,9 @@
 
                         {{-- Botão Deletar --}}
                         <button type="submit"
-                                class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent
-                                     rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700
-                                      focus:bg-red-700 active:bg-red-900 focus:outline-none focus:ring-2 focus:ring-indigo-500
+                                class="inline-flex items-center px-4 py-2 bg-pink-600 border border-transparent
+                                     rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-pink-700
+                                      focus:bg-pink-700 active:bg-pink-900 focus:outline-none focus:ring-2 focus:ring-cyan-500
                                        focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                             Deletar Usuário
                         </button>
@@ -65,9 +65,9 @@
                                                    value="{{ $user->name }}"
                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
                                                     placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('name') ? 'ring-red-600 focus:ring-red-600' : 'ring-gray-300 focus:ring-indigo-600' }}">
+                                                     {{ $errors->has('name') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
                                             @error('name')
-                                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                                            <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
@@ -81,9 +81,9 @@
                                                    value="{{ $user->email }}"
                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
                                                     placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('email') ? 'ring-red-600 focus:ring-red-600' : 'ring-gray-300 focus:ring-indigo-600' }}">
+                                                     {{ $errors->has('email') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
                                             @error('email')
-                                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                                            <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
@@ -96,9 +96,9 @@
                                             <input id="password" name="password" type="password"
                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
                                                     placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('password') ? 'ring-red-600 focus:ring-red-600' : 'ring-gray-300 focus:ring-indigo-600' }}">
+                                                     {{ $errors->has('password') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
                                             @error('password')
-                                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                                            <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
@@ -117,7 +117,7 @@
                                 <button type="submit"
                                         class="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white
                                          shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2
-                                          focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                                          focus-visible:outline-offset-2 focus-visible:outline-cyan-600">
                                     Atualizar
                                 </button>
                             </div>

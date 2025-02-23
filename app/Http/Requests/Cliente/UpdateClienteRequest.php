@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Requests\User;
+namespace App\Http\Requests\Cliente;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * Class UpdateUserRequest
- * @package App\Http\Requests\User
+ * Class UpdateClienteRequest
+ * @package App\Http\Requests\Cliente
  */
-class UpdateUserRequest extends FormRequest
+class UpdateClienteRequest extends FormRequest
 {
     /**
-     * Determina se o usuário é autorizado a fazer essa solicitação.
+     * Determina se o cliente é autorizado a fazer essa solicitação.
      */
     public function authorize(): bool
     {
@@ -39,17 +39,34 @@ class UpdateUserRequest extends FormRequest
                 'lowercase',
                 'email',
                 'max:255',
-                'unique:users,email,' .
+                'unique:clientes,email,' .
                 $this->route(
                     'id'
                 )
+            ],
+            'telephone' => [
+                'sometimes',
+                'string',
+                'min:11',
+                'regex:/^\d{2}\d{9}$/'
+            ],
+            'zip_code' => [
+                'sometimes',
+                'string',
+                'min:8',
+                'regex:/^\d{8}$/'
+            ],
+            'address' => [
+                'sometimes',
+                'string',
+                'max:255'
             ],
             'password' => [
                 'nullable',
                 'string',
                 'min:8',
                 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}$/'
-            ],
+            ]
         ];
     }
 }

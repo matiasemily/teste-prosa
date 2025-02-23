@@ -5,11 +5,11 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("Você está logado(a)!") }}
+    <div class="pt-6 pb-2 sm:pt-8 sm:pb-4">
+        <div class="max-w-fit mx-auto sm:px-6 lg:px-8">
+            <div class="bg-cyan-10 overflow-hidden shadow-sm rounded-lg">
+                <div class="p-6 text-gray-900 text-center">
+                    Olá <span class="capitalize font-bold">{{ Auth::user()->name }}</span>, seja bem-vindo(a)!
                 </div>
             </div>
         </div>

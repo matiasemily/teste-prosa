@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Ao apagar sua conta, todos os seus recursos e dados serão permanentemente excluídos. Antes de apagar sua conta, por favor, baixe os dados ou informações que deseja manter.') }}
+            {{ __('Ao excluir sua conta, todos os seus recursos e dados serão permanentemente removidos. Antes de apagar sua conta, por favor, baixe os dados ou informações que deseja manter.') }}
         </p>
     </header>
 

@@ -14,6 +14,13 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+
+            colors: {
+                'cyan-10': '#FCFFFF',
+                'cyan-20': '#F6FFFF',
+                'cyan-30': '#F3FFFF',
+                'ciano': '#008D9D',
+            },
         },
     },
 

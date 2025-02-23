@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Requests\User;
+namespace App\Http\Requests\Cliente;
 
-use App\Models\User;
+use App\Models\Cliente;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 /**
- * Class StoreUserRequest
- * @package App\Http\Requests\User
+ * Class StoreClienteRequest
+ * @package App\Http\Requests\Cliente
  */
-class StoreUserRequest extends FormRequest
+class StoreClienteRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determina se o cliente é autorizado a fazer essa solicitação.
      */
     public function authorize(): bool
     {
@@ -22,7 +22,7 @@ class StoreUserRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Recebe as regras de validação que se aplicam a essa solicitação.
      *
      * @return array<string, ValidationRule|array<mixed>|string>
      */
@@ -35,23 +35,31 @@ class StoreUserRequest extends FormRequest
                 'min:2',
                 'max:255'
             ],
-            'name.required' => 'Campo obrigatório.',
-            'name.min' => 'Mínimo de 2 caracteres.',
-            'name.max' => 'Máximo de 255 caracteres.',
             'email' => [
                 'required',
                 'string',
                 'lowercase',
                 'email',
                 'max:255',
-                Rule::unique(User::class)->ignore($this->user()->id)
+                Rule::unique(Cliente::class)->ignore($this->cliente()->id)
             ],
-            'password' => [
+            'telephone' => [
+                'required',
+                'string',
+                'min:11',
+                'regex:/^\d{2}\d{9}$/'
+            ],
+            'zip_code' => [
                 'required',
                 'string',
                 'min:8',
-                'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}$/'
+                'regex:/^\d{8}$/'
             ],
+            'address' => [
+                'required',
+                'string',
+                'max:255'
+            ]
         ];
     }
 }

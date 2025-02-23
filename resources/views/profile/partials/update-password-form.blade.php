@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Certifique-se que sua conta está usando um senha forte e aleatória para manter-se segura.') }}
+            {{ __('Senha mínima de 8 caracteres, contendo pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial.') }}
         </p>
     </header>
 
