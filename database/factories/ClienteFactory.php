@@ -23,8 +23,11 @@ class ClienteFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'telephone' => $this->gerarTelefoneValido(),
-            'zip_code' => $this->faker->numerify('########'),
-            'address' => $this->faker->streetAddress(),
+            'zip_code' => fake()->numerify('########'),
+            'street' => fake()->streetAddress(),
+            'neighborhood' => fake()->citySuffix(),
+            'city' => fake()->city(),
+            'state' => fake()->stateAbbr(),
         ];
     }
 

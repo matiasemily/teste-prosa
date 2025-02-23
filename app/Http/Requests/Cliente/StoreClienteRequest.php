@@ -47,18 +47,33 @@ class StoreClienteRequest extends FormRequest
                 'required',
                 'string',
                 'min:11',
-                'regex:/^\d{2}\d{9}$/'
+                # 'regex:/^\d{2}\d{9}$/'
             ],
             'zip_code' => [
                 'required',
                 'string',
-                'min:8',
-                'regex:/^\d{8}$/'
+                'max:8',
+                # 'regex:/^\d{8}$/'
             ],
-            'address' => [
+            'street' => [
                 'required',
                 'string',
                 'max:255'
+            ],
+            'neighborhood' => [
+                'required',
+                'string',
+                'max:255'
+            ],
+            'city' => [
+                'required',
+                'string',
+                'max:255'
+            ],
+            'state' => [
+                'required',
+                'string',
+                'max:2'
             ]
         ];
     }

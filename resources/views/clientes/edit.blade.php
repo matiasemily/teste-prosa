@@ -52,8 +52,7 @@
                         <div class="space-y-12">
                             <div class="border-b border-gray-900/10 pb-12">
                                 <h2 class="text-base font-semibold leading-7 text-gray-900">Perfil do Cliente</h2>
-                                <p class="mt-1 text-sm leading-6 text-gray-600">Esta informação será exibida
-                                    publicamente, então tenha cuidado com o que compartilha.</p>
+                                <p class="mt-1 text-sm leading-6 text-gray-600">Esta informação será exibida publicamente, então tenha cuidado com o que compartilha.</p>
 
                                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                                     <div class="sm:col-span-3">
@@ -74,7 +73,7 @@
 
                                     <div class="sm:col-span-3">
                                         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
-                                            Email
+                                            E-mail
                                         </label>
                                         <div class="mt-2">
                                             <input id="email" name="email" type="email" autocomplete="email"
@@ -95,10 +94,10 @@
                                         </label>
                                         <div class="mt-2">
                                             <input id="telephone" name="telephone" type="tel" autocomplete="telephone"
-                                                   value="{{ $cliente->telephone }}"
-                                                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
+                                                    value="{{ $cliente->telephone }}"
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
                                                     placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('telephone') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
+                                                    {{ $errors->has('telephone') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
                                             @error('telephone')
                                             <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
@@ -111,10 +110,10 @@
                                         </label>
                                         <div class="mt-2">
                                             <input id="zip_code" name="zip_code" type="text" autocomplete="zip_code"
-                                                   value="{{ $cliente->zip_code }}"
-                                                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
-                                                    placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('zip_code') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
+                                                value="{{ $cliente->zip_code }}"
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
+                                                placeholder:text-gray-400 sm:text-sm sm:leading-6
+                                                {{ $errors->has('zip_code') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
                                             @error('zip_code')
                                             <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
@@ -122,19 +121,31 @@
                                     </div>
 
                                     <div class="sm:col-span-3">
-                                        <label for="address" class="block text-sm font-medium leading-6 text-gray-900">
-                                            Endereço
+                                        <label for="rua" class="block text-sm font-medium leading-6 text-gray-900">
+                                            Rua
                                         </label>
-                                        <div class="mt-2">
-                                            <input id="address" name="address" type="text" autocomplete="address"
-                                                   value="{{ $cliente->address }}"
-                                                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
-                                                    placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                     {{ $errors->has('address') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
-                                            @error('address')
-                                            <span class="text-pink-600 text-sm">{{ $message }}</span>
-                                            @enderror
-                                        </div>
+                                        <input id="rua" name="rua" type="text" class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm" readonly>
+                                    </div>
+
+                                    <div class="sm:col-span-1">
+                                        <label for="bairro" class="block text-sm font-medium leading-6 text-gray-900">
+                                            Bairro
+                                        </label>
+                                        <input id="bairro" name="bairro" type="text" class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm" readonly>
+                                    </div>
+
+                                    <div class="sm:col-span-1">
+                                        <label for="cidade" class="block text-sm font-medium leading-6 text-gray-900">
+                                            Cidade
+                                        </label>
+                                        <input id="cidade" name="cidade" type="text" class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm" readonly>
+                                    </div>
+
+                                    <div class="sm:col-span-1">
+                                        <label for="estado" class="block text-sm font-medium leading-6 text-gray-900">
+                                            UF
+                                        </label>
+                                        <input id="estado" name="estado" type="text" class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm" readonly>
                                     </div>
 
                                 </div>

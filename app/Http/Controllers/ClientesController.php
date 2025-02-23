@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Http\Requests\Cliente\StoreClienteRequest;
 
 /**
  * Class ClientesController
@@ -43,9 +44,9 @@ class ClientesController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function store(Request $request): RedirectResponse
+    public function store(StoreClienteRequest $request): RedirectResponse
     {
-        $data = $request->all();
+        $data = $request->validated();
         $this->clienteService->criarCliente($data);
         return redirect()->route('clientes.index');
     }

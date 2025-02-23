@@ -34,7 +34,7 @@
                         {{ __('Seu e-mail não foi verificado.') }}
 
                         <button form="send-verification" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
-                            {{ __('Click here to re-send the verification email.') }}
+                            {{ __('Clique aqui para re-enviar o e-mail de verificação.') }}
                         </button>
                     </p>
 
@@ -57,7 +57,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
+                >{{ __('Salvo.') }}</p>
             @endif
         </div>
     </form>

@@ -30,7 +30,7 @@ class ClienteRepository extends AbstractRepository implements ClienteRepositoryI
     {
         try {
             return $this->model::query()
-                ->select('id', 'name', 'email', 'created_at', 'updated_at', 'telephone', 'zip_code', 'address')
+                ->select('id', 'name', 'email', 'created_at', 'updated_at', 'telephone', 'zip_code', 'street', 'neighborhood', 'city', 'state')
                 ->where(function ($query) use ($search) {
                     self::addFilters($query, $search);
                 })

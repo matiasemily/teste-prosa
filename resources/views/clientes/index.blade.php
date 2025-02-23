@@ -78,7 +78,10 @@
                         <td class="px-6 py-4">{{ $cliente->email }}</td>
                         <td class="px-6 py-4">{{ $cliente->telephone }}</td>
                         <td class="px-6 py-4">{{ $cliente->zip_code }}</td>
-                        <td class="px-6 py-4">{{ $cliente->address }}</td>
+                        <td class="px-6 py-4">{{ $cliente->street }}</td>
+                        <td class="px-6 py-4">{{ $cliente->neighborhood }}</td>
+                        <td class="px-6 py-4">{{ $cliente->city }}</td>
+                        <td class="px-6 py-4">{{ $cliente->state }}</td>
                         <td class="px-6 py-4">{{ $cliente->created_at->format('d/m/Y H:i') }}</td>
                         <td class="px-6 py-4">{{ $cliente->updated_at->format('d/m/Y H:i') }}</td>
 
@@ -122,7 +125,10 @@
                     <p class="font-bold mt-2 text-sm text-gray-600">E-mail: <span id="modal-email" class="font-light"></span></p>
                     <p class="font-bold mt-2 text-sm text-gray-600">Telefone: <span id="modal-telephone" class="font-light"></span></p>
                     <p class="font-bold mt-2 text-sm text-gray-600">CEP: <span id="modal-zip_code" class="font-light"></span></p>
-                    <p class="font-bold mt-2 text-sm text-gray-600">Endereço: <span id="modal-address" class="font-light"></span></p>
+                    <p class="font-bold mt-2 text-sm text-gray-600">Rua: <span id="modal-street" class="font-light"></span></p>
+                    <p class="font-bold mt-2 text-sm text-gray-600">Bairro: <span id="modal-neighborhood" class="font-light"></span></p>
+                    <p class="font-bold mt-2 text-sm text-gray-600">Cidade: <span id="modal-city" class="font-light"></span></p>
+                    <p class="font-bold mt-2 text-sm text-gray-600">UF: <span id="modal-state" class="font-light"></span></p>
                     <p class="font-bold mt-2 text-sm text-gray-600">Criado em: <span id="modal-created_at" class="font-light"></span></p>
                     <p class="font-bold mt-2 text-sm text-gray-600">Última Atualização: <span id="modal-updated_at" class="font-light"></span></p>
                 </div>
@@ -150,7 +156,10 @@
             document.getElementById('modal-email').innerText = cliente.email;
             document.getElementById('modal-telephone').innerText = cliente.telephone;
             document.getElementById('modal-zip_code').innerText = cliente.zip_code;
-            document.getElementById('modal-address').innerText = cliente.address;
+            document.getElementById('modal-street').innerText = cliente.street;
+            document.getElementById('modal-neighborhood').innerText = cliente.neighborhood;
+            document.getElementById('modal-city').innerText = cliente.city;
+            document.getElementById('modal-state').innerText = cliente.state;
 
             {{-- Ajustando os valores de data --}}
             document.getElementById('modal-created_at').innerText = new Date(cliente.created_at).toLocaleString('pt-BR');

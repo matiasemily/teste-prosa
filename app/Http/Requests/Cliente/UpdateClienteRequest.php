@@ -56,16 +56,25 @@ class UpdateClienteRequest extends FormRequest
                 'min:8',
                 'regex:/^\d{8}$/'
             ],
-            'address' => [
+            'street' => [
                 'sometimes',
                 'string',
                 'max:255'
             ],
-            'password' => [
-                'nullable',
+            'neighborhood' => [
+                'sometimes',
                 'string',
-                'min:8',
-                'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}$/'
+                'max:255'
+            ],
+            'city' => [
+                'sometimes',
+                'string',
+                'max:255'
+            ],
+            'state' => [
+                'sometimes',
+                'string',
+                'max:255'
             ]
         ];
     }

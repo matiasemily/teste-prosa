@@ -30,6 +30,9 @@ class Cliente extends Model
         'email',
         'telephone',
         'zip_code',
-        'address',
+        'street',
+        'neighborhood',
+        'city',
+        'state',
     ];
 }
