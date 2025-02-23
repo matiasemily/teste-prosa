@@ -109,11 +109,12 @@
                                             CEP
                                         </label>
                                         <div class="mt-2">
-                                            <input id="zip_code" name="zip_code" type="text" autocomplete="zip_code"
-                                                value="{{ $cliente->zip_code }}"
+                                            <input id="zip_code" name="zip_code" type="text"
                                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset
                                                 placeholder:text-gray-400 sm:text-sm sm:leading-6
-                                                {{ $errors->has('zip_code') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}">
+                                                {{ $errors->has('zip_code') ? 'ring-pink-600 focus:ring-pink-600' : 'ring-gray-300 focus:ring-cyan-600' }}"
+                                                placeholder="Digite o CEP"
+                                                value="{{ $cliente->zip_code }}" onblur="pesquisaCep(this.value)">
                                             @error('zip_code')
                                             <span class="text-pink-600 text-sm">{{ $message }}</span>
                                             @enderror
@@ -121,35 +122,39 @@
                                     </div>
 
                                     <div class="sm:col-span-3">
-                                        <label for="rua" class="block text-sm font-medium leading-6 text-gray-900">
+                                        <label for="street" class="block text-sm font-medium leading-6 text-gray-900">
                                             Rua
                                         </label>
-                                        <input id="rua" name="rua" type="text" class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm" readonly>
+                                        <input id="street" name="street" type="text" value="{{ $cliente->street }}"
+                                            class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm">
                                     </div>
 
                                     <div class="sm:col-span-1">
-                                        <label for="bairro" class="block text-sm font-medium leading-6 text-gray-900">
+                                        <label for="neighborhood" class="block text-sm font-medium leading-6 text-gray-900">
                                             Bairro
                                         </label>
-                                        <input id="bairro" name="bairro" type="text" class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm" readonly>
+                                        <input id="neighborhood" name="neighborhood" type="text" value="{{ $cliente->neighborhood }}"
+                                            class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm">
                                     </div>
 
                                     <div class="sm:col-span-1">
-                                        <label for="cidade" class="block text-sm font-medium leading-6 text-gray-900">
+                                        <label for="city" class="block text-sm font-medium leading-6 text-gray-900">
                                             Cidade
                                         </label>
-                                        <input id="cidade" name="cidade" type="text" class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm" readonly>
+                                        <input id="city" name="city" type="text" value="{{ $cliente->city }}"
+                                            class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm">
                                     </div>
 
                                     <div class="sm:col-span-1">
-                                        <label for="estado" class="block text-sm font-medium leading-6 text-gray-900">
+                                        <label for="state" class="block text-sm font-medium leading-6 text-gray-900">
                                             UF
                                         </label>
-                                        <input id="estado" name="estado" type="text" class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm" readonly>
+                                        <input id="state" name="state" type="text" value="{{ $cliente->state }}"
+                                            class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm">
                                     </div>
-
                                 </div>
                             </div>
+
 
                             <div class="mt-6 flex items-center justify-end gap-x-6">
                                 <!-- Botão Voltar -->
@@ -169,5 +174,54 @@
             </div>
         </div>
     </div>
+
+    {{-- Script para pesquisar CEP através de ViaCEP --}}
+    <script>
+        function limpaFormularioCep() {
+            document.getElementById('street').value = "";
+            document.getElementById('neighborhood').value = "";
+            document.getElementById('city').value = "";
+            document.getElementById('state').value = "";
+        }
+
+        function pesquisaCep(valor) {
+            /* Remover caracteres especiais */
+            let cep = valor.replace(/\D/g, '');
+
+            if (cep !== "") {
+                let validacep = /^[0-9]{8}$/;
+
+                if (validacep.test(cep)) {
+                    document.getElementById('street').value = "...";
+                    document.getElementById('neighborhood').value = "...";
+                    document.getElementById('city').value = "...";
+                    document.getElementById('state').value = "...";
+
+                    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (!data.erro) {
+                                document.getElementById('street').value = data.logradouro;
+                                document.getElementById('neighborhood').value = data.bairro;
+                                document.getElementById('city').value = data.localidade;
+                                document.getElementById('state').value = data.uf;
+                            } else {
+                                limpaFormularioCep();
+                                alert("CEP não encontrado.");
+                            }
+                        })
+                        .catch(() => {
+                            limpaFormularioCep();
+                            alert("Erro ao buscar o CEP.");
+                        });
+                } else {
+                    limpaFormularioCep();
+                    alert("Formato de CEP inválido.");
+                }
+            } else {
+                limpaFormularioCep();
+            }
+        }
+    </script>
 
 </x-app-layout>

@@ -28,53 +28,49 @@ class UpdateClienteRequest extends FormRequest
     {
         return [
             'name' => [
-                'sometimes',
+                'required',
                 'string',
                 'min:2',
                 'max:255'
             ],
             'email' => [
-                'sometimes',
+                'required',
                 'string',
                 'lowercase',
                 'email',
                 'max:255',
-                'unique:clientes,email,' .
-                $this->route(
-                    'id'
-                )
             ],
             'telephone' => [
-                'sometimes',
+                'required',
                 'string',
                 'min:11',
                 'regex:/^\d{2}\d{9}$/'
             ],
             'zip_code' => [
-                'sometimes',
+                'nullable',
                 'string',
-                'min:8',
+                'max:8',
                 'regex:/^\d{8}$/'
             ],
             'street' => [
-                'sometimes',
+                'nullable',
                 'string',
                 'max:255'
             ],
             'neighborhood' => [
-                'sometimes',
+                'nullable',
                 'string',
                 'max:255'
             ],
             'city' => [
-                'sometimes',
+                'nullable',
                 'string',
                 'max:255'
             ],
             'state' => [
-                'sometimes',
+                'nullable',
                 'string',
-                'max:255'
+                'max:2'
             ]
         ];
     }

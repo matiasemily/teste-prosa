@@ -41,19 +41,18 @@ class StoreClienteRequest extends FormRequest
                 'lowercase',
                 'email',
                 'max:255',
-                Rule::unique(Cliente::class)->ignore($this->cliente()->id)
             ],
             'telephone' => [
                 'required',
                 'string',
                 'min:11',
-                # 'regex:/^\d{2}\d{9}$/'
+                'regex:/^\d{2}\d{9}$/'
             ],
             'zip_code' => [
                 'required',
                 'string',
                 'max:8',
-                # 'regex:/^\d{8}$/'
+                'regex:/^\d{8}$/'
             ],
             'street' => [
                 'required',
