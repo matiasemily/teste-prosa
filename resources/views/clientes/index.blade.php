@@ -101,7 +101,7 @@
                 {{-- Caso a lista esteja vazia, exibe a mensagem --}}
                 @empty
                     <tr>
-                        <td colspan="9" class="bg-cyan-10 px-6 py-4 text-center text-gray-900 whitespace-nowrap">Nenhum cliente encontrado.</td>
+                        <td colspan="12" class="bg-cyan-10 px-6 py-4 text-center text-gray-900 whitespace-nowrap">Nenhum cliente encontrado.</td>
                     </tr>
                 @endforelse
                 </tbody>
