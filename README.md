@@ -6,7 +6,7 @@
 # Dashboard Prosa
 
 ## Introdução
-Dashboard Prosa é uma aplicação web full-stack de gerenciamento de clientes e usuários, desenvolvida com PHP (Laravel) no back-end, MySQL para gerenciamento do banco de dados, e Blade para o front-end. Foi realizado sob [licença MIT](##Licença) por mim, Emily Matias, entre 20 a 24 de Fevereiro de 2025, como etapa de prova técnica do processo seletivo da [Prosa](https://prosa.eco.br/a-prosa/).
+Dashboard Prosa é uma aplicação web full-stack de gerenciamento de clientes e usuários, desenvolvida com PHP (Laravel) no back-end, MySQL para gerenciamento do banco de dados, e Blade para o front-end. Foi realizado sob licença MIT por mim, Emily Matias, entre 20 a 24 de Fevereiro de 2025, como etapa de prova técnica do processo seletivo da [Prosa](https://prosa.eco.br/a-prosa/).
 
 ## Informações
 - O projeto segue o padrão do Laravel de arquitetura MVC, que separa a lógica da aplicação para facilitar a manutenção e a escalabilidade. Em `app/` há os modelos (models) com a lógica do back-end, e `resources/` contém views e assets do front-end. Já os controladores (controllers) ficam em `app/Http/Controllers/`.
@@ -90,8 +90,8 @@ Das linhas 24 a 29, configure a conexão com o banco de dados como abaixo:
    DB_USERNAME=root
    DB_PASSWORD=0123 # Senha EXATA do seu banco MySQL local
    ```
-   >[!TIP]
-   >Use a senha do banco de dados **exatamente** como você a configurou localmente para o MySQL.
+   >[!WARNING]
+   >Use a senha do banco de dados **exatamente** como você a configurou localmente para o MySQL. <br>
    >Lembre-se de salvar as alterações no `.env`.
    
 8. Gere a chave da aplicação:
