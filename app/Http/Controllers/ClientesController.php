@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Cliente\StoreClienteRequest;
+use App\Http\Requests\Cliente\UpdateClienteRequest;
 use App\Services\Cliente\ClienteService;
 use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use App\Http\Requests\Cliente\StoreClienteRequest;
 
 /**
  * Class ClientesController
@@ -79,9 +80,9 @@ class ClientesController extends Controller
      * @param string $id
      * @return RedirectResponse
      */
-    public function update(Request $request, string $id): RedirectResponse
+    public function update(UpdateClienteRequest $request, string $id): RedirectResponse
     {
-        $data = $request->all();
+        $data = $request->validated();
         $this->clienteService->atualizarCliente($data, $id);
         return redirect()->route('clientes.index');
     }

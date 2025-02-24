@@ -26,13 +26,17 @@ Dashboard Prosa é uma aplicação web full-stack de gerenciamento de clientes e
 ## Requisitos de ambiente
 Para rodar este projeto, verifique se possui os requisitos listados abaixo instalados localmente. Caso falte algum requisito, instale-o a partir da documentação referenciada nos links:
 
+> [!NOTE]
+> Dependendo da versão que você já tenha, talvez seja necessário atualizá-la para garantir compatibilidade e segurança.
+
 | Requisito | Comando |
 |-----------|---------|
-|[PHP](https://www.php.net/manual/pt_BR/install.php)| `php -version` |
-| [Node.js e NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) | `node -v` e `npm -v` |
-| [Composer](https://getcomposer.org/download/) | `composer -v` |
+|[PHP 8+](https://www.php.net/manual/pt_BR/install.php)| `php -version` |
+| [Node.js 22+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) | `node -v` |
+| [NPM 10+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) | `npm -v` |
+| [Composer 2.8+](https://getcomposer.org/download/) | `composer -v` |
 
-## Passo a passo
+## Como executar localmente
 > [!IMPORTANT]
 > Antes de prosseguir, certifique-se de que você possui os requisitos da seção acima.
 
@@ -64,6 +68,9 @@ Siga os passos abaixo no seu terminal bash para configurar e rodar a aplicação
    composer update
    ```
 
+   > [!NOTE]
+   > Futuramente pode haver atualizações e vulnerabilidades conhecidas para corrigir problemas de Composer e NPM.
+
 6. Copie o arquivo de exemplo de configuração, que servirá de base para nosso `.env`:
    ```bash
    cp .env.example .env
@@ -75,12 +82,6 @@ Na linha 1, renomeie o título do aplicativo:
    ```txt
    APP_NAME="Dashboard Prosa"  # Título da página/aplicativo
    ```
-Nas linhas 8 a 10, configure o idioma para português brasileiro:
-   ```txt
-   APP_LOCALE=pt_BR # Idioma base da aplicação
-   APP_FALLBACK_LOCALE=pt_BR # Idioma base caso a tradução não seja encontrada
-   APP_FAKER_LOCALE=pt_BR # Idioma base dos dados gerados por faker para popular o banco
-   ```
 Das linhas 24 a 29, configure a conexão com o banco de dados como abaixo:
    ```txt
    DB_CONNECTION=mysql # Tipo de SGBD utilizado
@@ -90,9 +91,9 @@ Das linhas 24 a 29, configure a conexão com o banco de dados como abaixo:
    DB_USERNAME=root
    DB_PASSWORD=0123 # Senha EXATA do seu banco MySQL local
    ```
-   >[!WARNING]
-   >Use a senha do banco de dados **exatamente** como você a configurou localmente para o MySQL. <br>
-   >Lembre-se de salvar as alterações no `.env`.
+   > [!WARNING]
+   > Use a senha do banco de dados **exatamente** como você a configurou localmente para o MySQL.<br/>
+   > Lembre-se de salvar suas alterações no `.env`.
    
 8. Gere a chave da aplicação:
    ```bash
