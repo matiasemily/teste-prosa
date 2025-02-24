@@ -1,66 +1,140 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img alt="Por" src="https://img.shields.io/badge/Por-Emily%20Matias-ff69b4?style=for-the-badge">
+  <img alt="Foco" src="https://img.shields.io/badge/Stacks-PHP%20(Laravel),_Blade-00B8B5?style=for-the-badge">
 </p>
 
-## About Laravel
+# Dashboard Prosa
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Introdução
+Dashboard Prosa é uma aplicação web full-stack de gerenciamento de clientes e usuários, desenvolvida com PHP (Laravel) no back-end, MySQL para gerenciamento do banco de dados, e Blade para o front-end. Foi realizado sob [licença MIT](##Licença) por mim, Emily Matias, entre 20 a 24 de Fevereiro de 2025, como etapa de prova técnica do processo seletivo da [Prosa](https://prosa.eco.br/a-prosa/).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Informações
+- O projeto segue o padrão do Laravel de arquitetura MVC, que separa a lógica da aplicação para facilitar a manutenção e a escalabilidade. Em `app/` há os modelos (models) com a lógica do back-end, e `resources/` contém views e assets do front-end. Já os controladores (controllers) ficam em `app/Http/Controllers/`.
+- A interação com o banco de dados é feita através de Eloquent ORM.
+- Banco de dados gerenciado para população através de migrations, seeders e factories, em `database/`.
+- Há duas entidades, *Usuários* e *Clientes*: cada usuário possui nome, e-mail, senha, data de criação e data de atualização; cada cliente possui nome, e-mail, telefone (com DDD), CEP, rua, bairro, cidade e UF.
+- O projeto utiliza Blade para as views, no formato `.blade.php`.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Funcionalidades
+- Sistema de autenticação e autorização, usando Laravel Breeze.
+- Proteção de rotas: apenas usuários logados podem efetuar as operações CRUD.
+- Sistema de paginação para a listagem de Clientes e Usuários.
+- Campo de busca para filtrar Clientes e Usuários, por nome ou e-mail.
+- Senha do usuário criptografada antes de ser armazenada no banco de dados.
+- Busca de endereço do Cliente através do [VIA CEP](https://viacep.com.br/).
 
-## Learning Laravel
+## Requisitos de ambiente
+Para rodar este projeto, verifique se possui os requisitos listados abaixo instalados localmente. Caso falte algum requisito, instale-o a partir da documentação referenciada nos links:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Requisito | Comando |
+|-----------|---------|
+|[PHP](https://www.php.net/manual/pt_BR/install.php)| `php -version` |
+| [Node.js e NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) | `node -v` e `npm -v` |
+| [Composer](https://getcomposer.org/download/) | `composer -v` |
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Passo a passo
+> [!IMPORTANT]
+> Antes de prosseguir, certifique-se de que você possui os requisitos da seção acima.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Siga os passos abaixo no seu terminal bash para configurar e rodar a aplicação:
 
-## Laravel Sponsors
+1. Clone o repositório na pasta desejada:
+   ```bash
+   git clone https://github.com/matiasemily/teste-prosa.git
+   cd teste-prosa
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Instale as dependências do Composer:
+   ```bash
+   composer install
+   ```
 
-### Premium Partners
+3. Instale as dependências do NPM:
+   ```bash
+   npm install
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+4. Atualize as dependências do NPM:
+   ```bash
+   npm update
+   ```
 
-## Contributing
+5. Atualize as dependências do Composer:
+   ```bash
+   composer update
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. Copie o arquivo de exemplo de configuração, que servirá de base para nosso `.env`:
+   ```bash
+   cp .env.example .env
+   ```
 
-## Code of Conduct
+7. Abra o arquivo `.env` criado e configure as informações:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Na linha 1, renomeie o título do aplicativo:
+   ```txt
+   APP_NAME="Dashboard Prosa"  # Título da página/aplicativo
+   ```
+Nas linhas 8 a 10, configure o idioma para português brasileiro:
+   ```txt
+   APP_LOCALE=pt_BR # Idioma base da aplicação
+   APP_FALLBACK_LOCALE=pt_BR # Idioma base caso a tradução não seja encontrada
+   APP_FAKER_LOCALE=pt_BR # Idioma base dos dados gerados por faker para popular o banco
+   ```
+Das linhas 24 a 29, configure a conexão com o banco de dados como abaixo:
+   ```txt
+   DB_CONNECTION=mysql # Tipo de SGBD utilizado
+   DB_HOST=127.0.0.1
+   DB_PORT=3306 # Porta utilizada, no caso, a padrão do MySQL
+   DB_DATABASE=bdprosa # Nome do banco de dados que será conectado
+   DB_USERNAME=root
+   DB_PASSWORD=0123 # Senha EXATA do seu banco MySQL local
+   ```
+   >[!TIP]
+   >Use a senha do banco de dados **exatamente** como você a configurou localmente para o MySQL.
+   >Lembre-se de salvar as alterações no `.env`.
+   
+8. Gere a chave da aplicação:
+   ```bash
+   php artisan key:generate
+   ```
 
-## Security Vulnerabilities
+9. Execute as migrações para criar o banco de dados:
+   ```bash
+   php artisan migrate
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly dealt.
+10. Popule o banco de dados com dados iniciais:
+   ```bash
+   php artisan db:seed
+   ```
 
-## License
+11. Inicie o Vite para hot reload com Laravel:
+   ```bash
+   npm run dev
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+12. Em outra janela de terminal, inicie o servidor web PHP:
+   ```bash
+   php artisan serve
+   ```
+   
+13. Acesse no seu navegador o endereço `localhost:8000`.
+
+## Meu ambiente de desenvolvimento
+- OS: Fedora Linux 41 (Workstation Edition)
+- Shell: zsh 5.9
+- IDE: Visual Studio Code 1.97.2
+
+### Tecnologias utilizadas
+- PHP (CLI) 8.3.17
+- Laravel (Blade) 11.44.0
+- MySQL 8.0.40
+- Composer 2.8.5
+- Node.js 22.11.0
+- NPM 10.9.0
+- Tailwind 4.0.8
+
+## Licença
+
+O **Dashboard Prosa** é um software de código aberto, licenciado sob a [MIT license](https://opensource.org/licenses/MIT).
