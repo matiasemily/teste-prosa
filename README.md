@@ -68,8 +68,8 @@ Siga os passos abaixo no seu terminal bash para configurar e rodar a aplicação
    composer update
    ```
 
-   > [!NOTE]
-   > Futuramente pode haver atualizações e vulnerabilidades conhecidas para corrigir problemas de Composer e NPM.
+> [!NOTE]
+> Futuramente pode haver atualizações e vulnerabilidades conhecidas para corrigir problemas de Composer e NPM.
 
 6. Copie o arquivo de exemplo de configuração, que servirá de base para nosso `.env`:
    ```bash
