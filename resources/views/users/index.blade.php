@@ -61,7 +61,7 @@
                     <th scope="col" class="px-6 py-3">ID</th>
                     <th scope="col" class="px-6 py-3">Nome</th>
                     <th scope="col" class="px-6 py-3">Email</th>
-                    <th scope="col" class="px-6 py-3">Cadastrado Em</th>
+                    <th scope="col" class="px-6 py-3">Cadastro Em</th>
                     <th scope="col" class="px-6 py-3">Última Atualização</th>
                     <th scope="col" class="px-6 py-3">Ação</th>
                 </tr>

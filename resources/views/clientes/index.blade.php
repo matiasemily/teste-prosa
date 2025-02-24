@@ -63,8 +63,11 @@
                     <th scope="col" class="px-6 py-3">Email</th>
                     <th scope="col" class="px-6 py-3">Telefone</th>
                     <th scope="col" class="px-6 py-3">CEP</th>
-                    <th scope="col" class="px-6 py-3">Endereço</th>
-                    <th scope="col" class="px-6 py-3">Cadastrado Em</th>
+                    <th scope="col" class="px-6 py-3">Rua</th>
+                    <th scope="col" class="px-6 py-3">Bairro</th>
+                    <th scope="col" class="px-6 py-3">Cidade</th>
+                    <th scope="col" class="px-6 py-3">UF</th>
+                    <th scope="col" class="px-6 py-3">Cadastro Em</th>
                     <th scope="col" class="px-6 py-3">Última Atualização</th>
                     <th scope="col" class="px-6 py-3">Ação</th>
                 </tr>
