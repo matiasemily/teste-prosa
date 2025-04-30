@@ -24,14 +24,14 @@ Dashboard Prosa é uma aplicação web full-stack de gerenciamento de clientes e
 - Busca de endereço do Cliente através do [VIA CEP](https://viacep.com.br/).
 
 ## Requisitos de ambiente
-Para rodar este projeto, verifique se possui os requisitos listados abaixo instalados localmente. Caso falte algum requisito, instale-o a partir da documentação referenciada nos links:
+Para rodar este projeto, verifique se possui os requisitos listados abaixo instalados localmente. Caso falte algum requisito, instale-o ou atualize-o a partir da documentação referenciada nos links:
 
 > [!NOTE]
 > Dependendo da versão que você já tenha, talvez seja necessário atualizá-la para garantir compatibilidade e segurança.
 
 | Requisito | Comando |
 |-----------|---------|
-|[PHP 8+](https://www.php.net/manual/pt_BR/install.php)| `php -version` |
+|[PHP 8.3+](https://www.php.net/manual/pt_BR/install.php)| `php -version` |
 | [Node.js 22+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) | `node -v` |
 | [NPM 10+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) | `npm -v` |
 | [Composer 2.8+](https://getcomposer.org/download/) | `composer -v` |
